@@ -7,12 +7,17 @@ import com.agungfir.staycation.databinding.ItemHotelBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
-class AdapterCardHotel :
+class AdapterCardHotel(val listener: OnCardItemClickListener) :
     RecyclerView.Adapter<AdapterCardHotel.ViewHolder>() {
 
     private var hotels: List<Hotel> = listOf()
 
-    class ViewHolder(private val binding: ItemHotelBinding) : RecyclerView.ViewHolder(binding.root) {
+    interface OnCardItemClickListener {
+        fun onCardItemClickListner(hotel: Hotel)
+    }
+
+    inner class ViewHolder(private val binding: ItemHotelBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(hotel: Hotel) {
             Glide.with(binding.root.context)
                 .load(hotel.coverHotel)
@@ -22,7 +27,12 @@ class AdapterCardHotel :
             binding.nameHotel.text = hotel.name
             binding.locationHotel.text = hotel.location
             binding.rateHotel.text = hotel.rate.toString()
+
+            binding.root.setOnClickListener {
+                listener.onCardItemClickListner(hotel)
+            }
         }
+
 
     }
 

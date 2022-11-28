@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/agung/Documents/Android/Staycation/app/src/main/res/drawable/bg_circle_main.xml" value="0.1935" />
+        <entry key="..\:/Users/agung/Documents/Android/Staycation/app/src/main/res/drawable/bg_circle_stroke_main.xml" value="0.2225" />
         <entry key="..\:/Users/agung/Documents/Android/Staycation/app/src/main/res/drawable/bg_edit_text.xml" value="0.1935" />
         <entry key="..\:/Users/agung/Documents/Android/Staycation/app/src/main/res/drawable/bg_info.xml" value="0.1935" />
         <entry key="..\:/Users/agung/Documents/Android/Staycation/app/src/main/res/drawable/bottom_navigation_color.xml" value="0.1935" />
         <entry key="..\:/Users/agung/Documents/Android/Staycation/app/src/main/res/drawable/item_hotel.xml" value="0.1935" />
+        <entry key="..\:/Users/agung/Documents/Android/Staycation/app/src/main/res/layout/activity_detail.xml" value="0.264" />
         <entry key="..\:/Users/agung/Documents/Android/Staycation/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/agung/Documents/Android/Staycation/app/src/main/res/layout/fragment_home.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/agung/Documents/Android/Staycation/app/src/main/res/layout/fragment_transaction.xml" value="0.2578125" />

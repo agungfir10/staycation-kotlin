@@ -1,17 +1,16 @@
 package com.agungfir.staycation.ui.main.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.agungfir.staycation.AdapterCardHotel
-import com.agungfir.staycation.AdapterListHotel
-import com.agungfir.staycation.DataDummy
+import com.agungfir.staycation.*
 import com.agungfir.staycation.databinding.FragmentHomeBinding
 import com.bumptech.glide.Glide
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), AdapterCardHotel.OnCardItemClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -28,7 +27,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapterCardHotel = AdapterCardHotel()
+        val adapterCardHotel = AdapterCardHotel(this)
         adapterCardHotel.setData(DataDummy.getHotels())
         binding.rvTopPicks.adapter = adapterCardHotel
 
@@ -45,6 +44,10 @@ class HomeFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun onCardItemClickListner(hotel: Hotel) {
+        startActivity(Intent(requireContext(), DetailActivity::class.java))
     }
 
 }
